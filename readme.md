@@ -24,3 +24,9 @@ Si vous souhaitez héberger votre propre instance de CharleBin :
 1. Clonez ce dépôt sur un serveur avec PHP.
 2. Copiez le fichier `cfg/conf.sample.php` vers `cfg/conf.php`.
 3. Ajustez les réglages si nécessaire, et c'est prêt !
+
+
+## TD-1 : Initialisation
+
+1. Il faut récupérer le code PrivateBin, pour cela, on utilise la commande `git clone git@github.com:floo51/PrivateBin.git`
+2. 
