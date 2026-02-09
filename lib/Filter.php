@@ -22,32 +22,61 @@ use Exception;
 class Filter
 {
     /**
-     * format a given time string into a human readable label (localized)
+     * Supported time units
      *
-     * accepts times in the format "[integer][time unit]"
+     * @const array
+     */
+    const SUPPORTED_TIME_UNITS = array(
+        'sec',
+        'min',
+        'h',
+        'd',
+        'w',
+        'month',
+        'y',
+    );
+
+    /**
+     * format a given time value into a human readable, pluralized, and localized label
      *
      * @access public
      * @static
-     * @param  string $time
+     * @param  int    $value - The numeric time value
+     * @param  string $unit  - The time unit (e.g., 'sec', 'min', 'h', 'd', 'w', 'month', 'y')
      * @throws Exception
      * @return string
      */
-    public static function formatHumanReadableTime($time)
+    public static function formatHumanReadableTime($value, $unit)
     {
-        if (preg_match('/^(\d+) *(\w+)$/', $time, $matches) !== 1) {
-            throw new Exception("Error parsing time format '$time'", 30);
+        // Validate the input value
+        if (!is_int($value) || $value < 0) {
+            throw new Exception('Time value must be a non-negative integer', 30);
         }
-        switch ($matches[2]) {
-            case 'sec':
-                $unit = 'second';
-                break;
-            case 'min':
-                $unit = 'minute';
-                break;
-            default:
-                $unit = rtrim($matches[2], 's');
+
+        // Validate the unit
+        $unit = strtolower(trim($unit));
+        if (!in_array($unit, self::SUPPORTED_TIME_UNITS)) {
+            throw new Exception("Unsupported time unit: '{$unit}'", 30);
         }
-        return I18n::_(array('%d ' . $unit, '%d ' . $unit . 's'), (int) $matches[1]);
+
+        // Map short units to long form for localization
+        $unitMap = array(
+            'sec'   => 'second',
+            'min'   => 'minute',
+            'h'     => 'hour',
+            'd'     => 'day',
+            'w'     => 'week',
+            'month' => 'month',
+            'y'     => 'year',
+        );
+
+        $longForm = $unitMap[$unit];
+
+        // Return localized plural-aware string
+        return I18n::_(
+            array('%d ' . $longForm, '%d ' . $longForm . 's'),
+            $value
+        );
     }
 
     /**
