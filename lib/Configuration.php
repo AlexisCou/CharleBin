@@ -38,6 +38,8 @@ class Configuration
         'main' => array(
             'name'                     => 'CharleBin',
             'basepath'                 => '',
+            'discussion'               => true,
+            'opendiscussion'           => false,
             'password'                 => true,
             'fileupload'               => false,
             'burnafterreadingselected' => false,
