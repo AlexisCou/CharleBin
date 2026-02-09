@@ -237,6 +237,7 @@ class Configuration
 
         // ensure the basepath ends in a slash, if one is set
         if (
+            array_key_exists('basepath', $this->_configuration['main']) &&
             strlen($this->_configuration['main']['basepath']) &&
             substr_compare($this->_configuration['main']['basepath'], '/', -1) !== 0
         ) {

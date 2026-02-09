@@ -357,7 +357,26 @@ class Controller
         // label all the expiration options
         $expire = array();
         foreach ($this->_conf->getSection('expire_options') as $time => $seconds) {
-            $expire[$time] = ($seconds == 0) ? I18n::_(ucfirst($time)) : Filter::formatHumanReadableTime($time);
+            if ($seconds == 0) {
+                $expire[$time] = I18n::_(ucfirst($time));
+            } else {
+                // Parse time string (e.g., '5min' => 5, 'min')
+                if (preg_match('/^(\d+)([a-z]+)$/', $time, $matches)) {
+                    $value = (int) $matches[1];
+                    $unit = $matches[2];
+                    // Map time unit names to short forms
+                    $unitMap = array(
+                        'min' => 'min',
+                        'hour' => 'h',
+                        'day' => 'd',
+                        'week' => 'w',
+                        'month' => 'month',
+                        'year' => 'y',
+                    );
+                    $unit = isset($unitMap[$unit]) ? $unitMap[$unit] : $unit;
+                    $expire[$time] = Filter::formatHumanReadableTime($value, $unit);
+                }
+            }
         }
 
         // translate all the formatter options
