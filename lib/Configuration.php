@@ -37,6 +37,7 @@ class Configuration
     private static $_defaults = array(
         'main' => array(
             'name'                     => 'CharleBin',
+            'basepath'                 => '',
             'password'                 => true,
             'fileupload'               => false,
             'burnafterreadingselected' => false,
