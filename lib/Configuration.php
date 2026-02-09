@@ -58,7 +58,6 @@ class Configuration
         ),
         'expire' => array(
             'default' => '1month',
-	change-default-expiration
         ),
         'expire_options' => array(
             '5min'   => 300,
