@@ -90,11 +90,11 @@ class Filter
     public static function formatHumanReadableSize($size)
     {
         $iec = array('B', 'KiB', 'MiB', 'GiB', 'TiB', 'PiB', 'EiB', 'ZiB', 'YiB');
-        $ijk   = 0;
+        $ini   = 0;
         while (($size / 1024) >= 1) {
             $size = $size / 1024;
-            ++$i;
+            ++$ini;
         }
-        return number_format($size, ($i ? 2 : 0), '.', ' ') . ' ' . I18n::_($iec[$i]);
+        return number_format($size, ($ini ? 2 : 0), '.', ' ') . ' ' . I18n::_($iec[$ini]);
     }
 }
