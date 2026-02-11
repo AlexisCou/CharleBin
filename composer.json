@@ -48,6 +48,7 @@
 		"sort-packages": true
 	},
 	"require-dev": {
+		"phpmd/phpmd": "@stable",
 		"phpunit/phpunit": "^9",
 		"squizlabs/php_codesniffer": "3.*"
 	},

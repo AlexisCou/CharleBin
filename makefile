@@ -11,6 +11,6 @@ lint:
 	@echo "--- 1. PHP Lint (Syntaxe) ---"
 	-find . -type f -name "*.php" -not -path "./vendor/*" -not -path "./data/*" -exec php -l {} \;
 	@echo "--- 2. PHP Code Sniffer (Standards PSR) ---"
-	-./vendor/bin/phpcs --extensions=php ./lib/
+	-php ./vendor/bin/phpcs --extensions=php ./lib/
 	@echo "--- 3. PHP Mess Detector (Complexité) ---"
-	-./vendor/bin/phpmd ./lib ansi codesize,unusedcode,naming
+	-php ./vendor/bin/phpmd ./lib ansi codesize,unusedcode,naming
