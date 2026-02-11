@@ -25,7 +25,7 @@ abstract class AbstractData
      * @access protected
      * @var    array
      */
-    protected $_last_cache = array();
+    protected $last_cache = array();
 
     /**
      * Create a paste.
@@ -106,9 +106,9 @@ abstract class AbstractData
     public function purgeValues($namespace, $time)
     {
         if ($namespace === 'traffic_limiter') {
-            foreach ($this->_last_cache as $key => $last_submission) {
+            foreach ($this->last_cache as $key => $last_submission) {
                 if ($last_submission <= $time) {
-                    unset($this->_last_cache[$key]);
+                    unset($this->last_cache[$key]);
                 }
             }
         }
