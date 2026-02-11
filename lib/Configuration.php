@@ -18,19 +18,19 @@ use PDO;
 /**
  * Configuration
  *
- * parses configuration file, ensures default values present
+ * Parses configuration file, ensures default values present
  */
 class Configuration
 {
     /**
-     * parsed configuration
+     * Parsed configuration
      *
      * @var array
      */
     private $_configuration;
 
     /**
-     * default configuration
+     * Default configuration
      *
      * @var array
      */
@@ -101,7 +101,7 @@ class Configuration
     );
 
     /**
-     * parse configuration file and ensure default configuration values are present
+     * Parse configuration file and ensure default configuration values are present
      *
      * @throws Exception
      */
@@ -249,7 +249,7 @@ class Configuration
     }
 
     /**
-     * get configuration as array
+     * Get configuration as array
      *
      * @return array
      */
@@ -259,7 +259,7 @@ class Configuration
     }
 
     /**
-     * get default configuration as array
+     * Get default configuration as array
      *
      * @return array
      */
@@ -269,7 +269,7 @@ class Configuration
     }
 
     /**
-     * get a key from the configuration, typically the main section or all keys
+     * Get a key from the configuration, typically the main section or all keys
      *
      * @param string $key
      * @param string $section defaults to main
@@ -286,7 +286,7 @@ class Configuration
     }
 
     /**
-     * get a section from the configuration, must exist
+     * Get a section from the configuration, must exist
      *
      * @param string $section
      * @throws Exception
