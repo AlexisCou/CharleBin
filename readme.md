@@ -4,11 +4,11 @@ CharleBin est un fork du projet OpenSource PrivateBin, un outil de partage de te
 
 ## Sommaire
 
-1. [TD-1 : Gestion de Version et Débogage dichotomique](https://www.google.com/search?q=%23td1)
-2. [TD-2 : Processus de Collaboration (Pull Requests)](https://www.google.com/search?q=%23td2)
-3. [TD-3 : Analyse Statique et Automatisation](https://www.google.com/search?q=%23td3)
-4. [TD-4 : Outils de Développement et IA](https://www.google.com/search?q=%23td4)
-5. [TD-5 : Stratégies de Tests](https://www.google.com/search?q=%23td5)
+1. [TD-1 : Gestion de Version et Débogage dichotomique]
+2. [TD-2 : Processus de Collaboration (Pull Requests)]
+3. [TD-3 : Analyse Statique et Automatisation]
+4. [TD-4 : Outils de Développement et IA]
+5. [TD-5 : Stratégies de Tests]
 
 ## TD-1 : Gestion de Version et Débogage dichotomique <a name="td1"></a>
 
