@@ -1,4 +1,5 @@
 <?php
+
 /**
  * PrivateBin
  *
@@ -26,7 +27,7 @@ class Filter
      *
      * @const array
      */
-    const SUPPORTED_TIME_UNITS = array(
+    public const SUPPORTED_TIME_UNITS = array(
         'sec',
         'min',
         'h',
