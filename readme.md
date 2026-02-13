@@ -30,7 +30,7 @@ Trois outils ont été intégrés dans le `makefile` via la cible `make lint` :
 ### Automatisation Locale (Git Hooks)
 Un script de `pre-commit` a été créé dans le répertoire `.git/hooks/`. 
 * **Action** : Il exécute `php-cs-fixer` pour corriger le style automatiquement et `phpmd` pour bloquer le commit si des violations subsistent.
-* **Manipulation** : Une variable `$x` a été ajoutée pour tester le blocage ; le commit a échoué car le nom est trop court, prouvant l'efficacité du hook.
+* **Manipulation** : Une variable `$x` a été ajoutée pour tester le blocage ; le commit a échoué car le nom est trop court, prouvant l'efficacité du hook. (Retiréee par la suite pour le bon fonctionnement de l'application).
 
 ---
 
